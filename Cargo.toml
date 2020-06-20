@@ -1,0 +1,21 @@
+[package]
+name = "rus6"
+version = "0.1.0"
+authors = ["Carlos Justiniano <cjus@ieee.org>"]
+edition = "2018"
+
+[lib]
+crate-type = ["cdylib"]
+name = "rus6"
+
+[dependencies]
+bson = "0.14"
+serde_json = "1.0"
+serde = "1.0"
+redis-module = "0.9.2"
+
+[features]
+# Workaround to allow cfg(feature = "test") in redismodue-rs dependencies:
+# https://github.com/RedisLabsModules/redismodule-rs/pull/68
+# This requires running the tests with `--features test`
+test = ["redis-module/test"]

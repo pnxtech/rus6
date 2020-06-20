@@ -2,4 +2,5 @@
 *.log
 scratch.*
 .vscode/
+/target
 
